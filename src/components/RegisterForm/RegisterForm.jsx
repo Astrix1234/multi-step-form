@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 import css from './RegisterForm.module.css';
 import { useFormik } from 'formik';
-import { validationSchema } from './validationSchema';
+import { validationSchema } from '../FormStep1/validationSchema';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
