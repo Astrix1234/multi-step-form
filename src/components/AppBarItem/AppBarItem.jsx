@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import css from './AppBarItem.module.css';
 
-const AppBarItem = ({ stepNumber, step, title }) => {
+const AppBarItem = ({ stepNumber, step, title, isActive }) => {
   return (
     <li className={css.item}>
-      <p className={css.stepNumber}>{stepNumber}</p>
+      <p className={`${css.stepNumber} ${isActive ? css.activeStep : ''}`}>
+        {stepNumber}
+      </p>
       <div className={css.description}>
         <p className={css.step}>{step}</p>
         <h4 className={css.title}>{title}</h4>

@@ -32,3 +32,8 @@
     font-size: 14px;
     color: white;
 }
+
+.activeStep {
+    background-color: #BEE2FD;
+    color: #022959;
+}

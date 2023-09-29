@@ -1,0 +1,17 @@
+.btnNextStep {
+    background-color: #022959;
+    border: none;
+    width: 123px;
+    height: 48px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btnNextStep:hover,
+.btnNextStep:focus {
+    background-color: #164A8A;
+    cursor: pointer;
+}
