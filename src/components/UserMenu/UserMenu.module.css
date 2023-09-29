@@ -1,0 +1,30 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.userEmail {
+    font-weight: 500;
+    color: white;
+}
+
+.buttonLogout {
+    display: block;
+    width: 80px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 0;
+    background-color: #4d1437;
+    color: white;
+    cursor: pointer;
+    margin-right: 16px;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.buttonLogout:hover,
+.buttonLogout:focus {
+    background-color: #3b0e2a;
+    color: #daa3c5;
+}

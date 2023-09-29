@@ -1,0 +1,16 @@
+.labelBook {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    color: white;
+}
+
+.inputBook {
+    font-size: 18px;
+    padding: 8px;
+    outline: none;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 0;
+    width: 320px;
+}
