@@ -16,9 +16,8 @@ body {
   font-family: 'Ubuntu', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: gray;
-  background-image: linear-gradient(to bottom right, #3a1c71, #d76d77, #ffaf7b);
-  background-repeat: no-repeat;
+  background-color: #dbe9ff;
+
 }
 
 code {

@@ -1,16 +1,13 @@
-import { Navigation } from '../Navigation/Navigation';
-import { UserMenu } from '../UserMenu/UserMenu';
-import { AuthNav } from '../AuthNav/AuthNav';
-import { useAuth } from 'hooks';
+import React from 'react';
 import css from './AppBar.module.css';
+import AppBarList from '../AppBarList/AppBarList';
 
-export const AppBar = () => {
-  const { isLoggedIn } = useAuth();
-
+const AppBar = () => {
   return (
-    <header className={css.header}>
-      <Navigation />
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
-    </header>
+    <aside className={css.aside}>
+      <AppBarList />
+    </aside>
   );
 };
+
+export default AppBar;
