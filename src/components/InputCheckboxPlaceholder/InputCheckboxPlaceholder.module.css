@@ -1,0 +1,48 @@
+.container {
+    width: 450px;
+    padding: 18px 24px;
+    border: 1px solid #D6D9E6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 16px;
+    transition: border 0.3s ease-in-out;
+}
+
+.container:hover,
+.container:focus {
+    border: 1px solid #483EFF;
+    cursor: pointer;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid #D6D9E6;
+}
+
+.description {
+    margin-left: 24px;
+}
+
+.plan {
+    font-size: 16px;
+    font-weight: 500;
+    color: #022959;
+    margin-bottom: 7px;
+}
+
+.comment {
+    font-size: 15px;
+    line-height: 20px;
+    color: #9699AA;
+}
+
+.price {
+    font-size: 15px;
+    line-height: 20px;
+    color: #483EFF;
+    margin-left: auto;
+}

@@ -1,0 +1,15 @@
+.visuallyHidden {
+    display: none;
+}
+
+.visuallyHidden:checked+.inputPlaceholder {
+    border: 1px solid #483EFF;
+    background-color: #F8F9FF;
+}
+
+.form {
+    display: flex;
+    margin-top: 35px;
+    width: 450px;
+    justify-content: space-between;
+}

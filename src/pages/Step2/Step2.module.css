@@ -1,0 +1,15 @@
+.container {
+    margin-top: 56px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    width: 450px;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 32px;
+
+}

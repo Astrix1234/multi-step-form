@@ -14,9 +14,30 @@ const AppBarList = () => {
         title="YOUR INFO"
         isActive={location.pathname === '/'}
       />
-      <AppBarItem stepNumber={2} step="STEP 2" title="SELECT PLAN" />
-      <AppBarItem stepNumber={3} step="STEP 3" title="ADD-ONS" />
-      <AppBarItem stepNumber={4} step="STEP 4" title="SUMMARY" />
+      <AppBarItem
+        stepNumber={2}
+        step="STEP 2"
+        title="SELECT PLAN"
+        isActive={
+          location.pathname === '/step2-monthly' ||
+          location.pathname === '/step2-yearly'
+        }
+      />
+      <AppBarItem
+        stepNumber={3}
+        step="STEP 3"
+        title="ADD-ONS"
+        isActive={
+          location.pathname === '/step3-monthly' ||
+          location.pathname === '/step3-yearly'
+        }
+      />
+      <AppBarItem
+        stepNumber={4}
+        step="STEP 4"
+        title="SUMMARY"
+        isActive={location.pathname === '/step4'}
+      />
     </ul>
   );
 };

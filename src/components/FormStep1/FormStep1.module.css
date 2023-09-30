@@ -20,6 +20,7 @@
     border: 1px solid #D6D9E6;
     border-radius: 8px;
     background-color: white;
+    outline: none;
     transition: border 0.3s ease-in-out;
 }
 

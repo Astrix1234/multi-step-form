@@ -1,0 +1,39 @@
+.container {
+    padding: 20px 0 16px 16px;
+    width: 138px;
+    border: 1px solid #D6D9E6;
+    border-radius: 8px;
+    transition: border 0.3s ease-in-out;
+}
+
+.container:hover,
+.container:focus {
+    border: 1px solid #483EFF;
+    cursor: pointer;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 39px;
+}
+
+.plan {
+    font-size: 16px;
+    font-weight: 500;
+    color: #022959;
+}
+
+.price {
+    margin-top: 7px;
+    font-size: 14px;
+    color: #9699AA;
+}
+
+.comment {
+    font-size: 12px;
+    color: #022959;
+    margin-top: 6px;
+
+}
