@@ -5,8 +5,13 @@ import IconAdvanced from 'components/IconAdvanced/IconAdvanced';
 import IconPro from 'components/IconPro/IconPro';
 import css from './FormStep2.module.css';
 import PropTypes from 'prop-types';
+import { plansConfig } from '../../config/plansConfig';
 
 const FormStep2 = ({ plan, handleChoiceChange }) => {
+  const arcadeConfig = plansConfig.arcade[plan];
+  const advancedConfig = plansConfig.advanced[plan];
+  const proConfig = plansConfig.pro[plan];
+
   return (
     <form className={css.form}>
       <label htmlFor="arcade">
@@ -21,10 +26,10 @@ const FormStep2 = ({ plan, handleChoiceChange }) => {
         />
         <InputRadioPlaceholder
           className={css.inputPlaceholder}
-          plan="Arcade"
-          price={plan === 'monthly' ? 9 : 90}
-          period={plan === 'monthly' ? 'mo' : 'yr'}
-          comment={plan === 'monthly' ? '' : '2 months free.'}
+          plan={arcadeConfig.name}
+          price={arcadeConfig.price}
+          period={arcadeConfig.period}
+          comment={arcadeConfig.comment}
         >
           <IconArcade />
         </InputRadioPlaceholder>
@@ -40,10 +45,10 @@ const FormStep2 = ({ plan, handleChoiceChange }) => {
         />
         <InputRadioPlaceholder
           className={css.inputPlaceholder}
-          plan="Advanced"
-          price={plan === 'monthly' ? 12 : 120}
-          period={plan === 'monthly' ? 'mo' : 'yr'}
-          comment={plan === 'monthly' ? '' : '2 months free.'}
+          plan={advancedConfig.name}
+          price={advancedConfig.price}
+          period={advancedConfig.period}
+          comment={advancedConfig.comment}
         >
           <IconAdvanced />
         </InputRadioPlaceholder>
@@ -59,10 +64,10 @@ const FormStep2 = ({ plan, handleChoiceChange }) => {
         />
         <InputRadioPlaceholder
           className={css.inputPlaceholder}
-          plan="Pro"
-          price={plan === 'monthly' ? 15 : 150}
-          period={plan === 'monthly' ? 'mo' : 'yr'}
-          comment={plan === 'monthly' ? '' : '2 months free.'}
+          plan={proConfig.name}
+          price={proConfig.price}
+          period={proConfig.period}
+          comment={proConfig.comment}
         >
           <IconPro />
         </InputRadioPlaceholder>

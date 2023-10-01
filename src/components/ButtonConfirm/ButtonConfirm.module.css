@@ -8,6 +8,7 @@
     font-size: 16px;
     color: white;
     transition: background-color 0.3s ease-in-out;
+    margin-left: auto;
 }
 
 .btnConfirm:hover,

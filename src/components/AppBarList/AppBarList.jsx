@@ -36,7 +36,9 @@ const AppBarList = () => {
         stepNumber={4}
         step="STEP 4"
         title="SUMMARY"
-        isActive={location.pathname === '/step4'}
+        isActive={
+          location.pathname === '/step4' || location.pathname === '/step5'
+        }
       />
     </ul>
   );
