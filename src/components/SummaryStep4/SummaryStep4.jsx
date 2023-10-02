@@ -8,7 +8,9 @@ const SummaryStep4 = ({
   periodName,
   path,
   planPrice,
-  price,
+  priceOnline,
+  priceLarger,
+  priceCustom,
   period,
   perPeriod,
   totalPrice,
@@ -25,7 +27,7 @@ const SummaryStep4 = ({
               {planName}({periodName})
             </p>
             <Link className={css.link} to={path}>
-              Chang
+              Change
             </Link>
           </div>
           <p className={css.planPrice}>{`$${planPrice}/${period}`}</p>
@@ -34,19 +36,19 @@ const SummaryStep4 = ({
         {online ? (
           <div className={css.service}>
             <p className={css.serviceName}>Online service</p>
-            <p className={css.servicePrice}>{`$${price}/${period}`}</p>
+            <p className={css.servicePrice}>{`$${priceOnline}/${period}`}</p>
           </div>
         ) : null}
         {larger ? (
           <div className={css.service}>
             <p className={css.serviceName}>Larger storage</p>
-            <p className={css.servicePrice}>{`$${price}/${period}`}</p>
+            <p className={css.servicePrice}>{`$${priceLarger}/${period}`}</p>
           </div>
         ) : null}
         {custom ? (
           <div className={css.service}>
             <p className={css.serviceName}>Customizable Profile</p>
-            <p className={css.servicePrice}>{`$${price}/${period}`}</p>
+            <p className={css.servicePrice}>{`$${priceCustom}/${period}`}</p>
           </div>
         ) : null}
       </div>
@@ -61,7 +63,9 @@ SummaryStep4.propTypes = {
   planName: PropTypes.string.isRequired,
   periodName: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  priceOnline: PropTypes.number.isRequired,
+  priceLarger: PropTypes.number.isRequired,
+  priceCustom: PropTypes.number.isRequired,
   period: PropTypes.string.isRequired,
   perPeriod: PropTypes.string.isRequired,
   totalPrice: PropTypes.number.isRequired,

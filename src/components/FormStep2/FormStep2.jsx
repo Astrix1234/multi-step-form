@@ -29,9 +29,9 @@ const FormStep2 = ({
         <InputRadioPlaceholder
           className={css.inputPlaceholder}
           plan="Arcade"
-          price={plan === 'monthly' ? 9 : 90}
-          period={plan === 'monthly' ? 'mo' : 'yr'}
-          comment={plan === 'monthly' ? '' : '2 months free.'}
+          price={plan === 'Monthly' ? 9 : 90}
+          period={plan === 'Monthly' ? 'mo' : 'yr'}
+          comment={plan === 'Monthly' ? '' : '2 months free.'}
         >
           <IconArcade />
         </InputRadioPlaceholder>
@@ -52,9 +52,9 @@ const FormStep2 = ({
         <InputRadioPlaceholder
           className={css.inputPlaceholder}
           plan="Advanced"
-          price={plan === 'monthly' ? 12 : 120}
-          period={plan === 'monthly' ? 'mo' : 'yr'}
-          comment={plan === 'monthly' ? '' : '2 months free.'}
+          price={plan === 'Monthly' ? 12 : 120}
+          period={plan === 'Monthly' ? 'mo' : 'yr'}
+          comment={plan === 'Monthly' ? '' : '2 months free.'}
         >
           <IconAdvanced />
         </InputRadioPlaceholder>
@@ -75,9 +75,9 @@ const FormStep2 = ({
         <InputRadioPlaceholder
           className={css.inputPlaceholder}
           plan="Pro"
-          price={plan === 'monthly' ? 15 : 150}
-          period={plan === 'monthly' ? 'mo' : 'yr'}
-          comment={plan === 'monthly' ? '' : '2 months free.'}
+          price={plan === 'Monthly' ? 15 : 150}
+          period={plan === 'Monthly' ? 'mo' : 'yr'}
+          comment={plan === 'Monthly' ? '' : '2 months free.'}
         >
           <IconPro />
         </InputRadioPlaceholder>

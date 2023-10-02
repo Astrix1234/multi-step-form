@@ -25,19 +25,43 @@
 
 .toggleButton {
     position: absolute;
-    top: 50%;
+    top: 4px;
     left: 4px;
-    transform: translateY(-50%);
     width: 12px;
     height: 12px;
     background-color: #fff;
     border-radius: 50%;
-    transition: transform 0.3s ease-in-out;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 .toggleInput:checked+.toggleLabel .toggleButton {
-    transform: translate(18px, -50%);
+    animation-name: slideToRight;
+}
 
+.toggleInput:not(:checked)+.toggleLabel .toggleButton {
+    animation-name: slideToLeft;
+}
+
+@keyframes slideToRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(18px);
+    }
+}
+
+@keyframes slideToLeft {
+    0% {
+        transform: translateX(18px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .toggleContainer span {

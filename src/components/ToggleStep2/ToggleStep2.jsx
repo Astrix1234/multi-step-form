@@ -5,20 +5,20 @@ import css from './ToggleStep2.module.css';
 const ToggleStep2 = ({ plan, handleToggleChange }) => {
   return (
     <div className={css.toggleContainer}>
-      <span className={plan === 'monthly' ? css.activeText : css.inactiveText}>
+      <span className={plan === 'Monthly' ? css.activeText : css.inactiveText}>
         Monthly
       </span>
       <input
         type="checkbox"
         id="planToggle"
         className={css.toggleInput}
-        checked={plan === 'yearly'}
+        checked={plan === 'Yearly'}
         onChange={handleToggleChange}
       />
       <label htmlFor="planToggle" className={css.toggleLabel}>
         <span className={css.toggleButton}></span>
       </label>
-      <span className={plan === 'yearly' ? css.activeText : css.inactiveText}>
+      <span className={plan === 'Yearly' ? css.activeText : css.inactiveText}>
         Yearly
       </span>
     </div>

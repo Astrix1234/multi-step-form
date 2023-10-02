@@ -16,7 +16,7 @@ export default function Step3() {
   const { onNextStep, onGoBack } = useNavigationHandlers(plan);
 
   const handleChoice = e => {
-    handleChoiceChange(e, plan, planDetails, setPlanDetails);
+    handleChoiceChange(e, plan, setPlanDetails);
   };
 
   return (

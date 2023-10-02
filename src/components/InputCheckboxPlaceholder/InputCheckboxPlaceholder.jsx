@@ -5,7 +5,7 @@ import css from './InputCheckboxPlaceholder.module.css';
 const InputCheckboxPlaceholder = ({
   classNameBox,
   className,
-  plan,
+  title,
   price,
   period,
   comment,
@@ -14,7 +14,7 @@ const InputCheckboxPlaceholder = ({
     <div className={`${css.container} ${className}`}>
       <div className={`${css.checkbox} ${classNameBox}`}></div>
       <div className={css.description}>
-        <p className={css.plan}>{plan}</p>
+        <p className={css.plan}>{title}</p>
         <p className={css.comment}>{comment}</p>
       </div>
       <p className={css.price}>{`$${price}/${period}`}</p>
@@ -25,7 +25,7 @@ const InputCheckboxPlaceholder = ({
 InputCheckboxPlaceholder.propTypes = {
   classNameBox: PropTypes.string,
   className: PropTypes.string,
-  plan: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   period: PropTypes.string.isRequired,
   comment: PropTypes.string.isRequired,

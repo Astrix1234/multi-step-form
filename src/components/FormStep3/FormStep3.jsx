@@ -18,10 +18,10 @@ const FormStep3 = ({ plan, handleChoiceChange }) => {
         <InputCheckboxPlaceholder
           className={css.inputPlaceholder}
           classNameBox={css.checkboxPlaceholder}
-          plan="Online service"
+          title="Online service"
           comment="Access to multiplayer games"
-          price={plan === 'monthly' ? 1 : 10}
-          period={plan === 'monthly' ? 'mo' : 'yr'}
+          price={plan === 'Monthly' ? 1 : 10}
+          period={plan === 'Monthly' ? 'mo' : 'yr'}
         />
       </label>
       <label htmlFor="larger">
@@ -36,10 +36,10 @@ const FormStep3 = ({ plan, handleChoiceChange }) => {
         <InputCheckboxPlaceholder
           className={css.inputPlaceholder}
           classNameBox={css.checkboxPlaceholder}
-          plan="Larger storage"
+          title="Larger storage"
           comment="Extra 1TB of cloud save"
-          price={plan === 'monthly' ? 2 : 20}
-          period={plan === 'monthly' ? 'mo' : 'yr'}
+          price={plan === 'Monthly' ? 2 : 20}
+          period={plan === 'Monthly' ? 'mo' : 'yr'}
         />
       </label>
       <label htmlFor="custom">
@@ -54,10 +54,10 @@ const FormStep3 = ({ plan, handleChoiceChange }) => {
         <InputCheckboxPlaceholder
           className={css.inputPlaceholder}
           classNameBox={css.checkboxPlaceholder}
-          plan="Customizable profile"
+          title="Customizable profile"
           comment="Custom theme on your profile"
-          price={plan === 'monthly' ? 3 : 20}
-          period={plan === 'monthly' ? 'mo' : 'yr'}
+          price={plan === 'Monthly' ? 2 : 20}
+          period={plan === 'Monthly' ? 'mo' : 'yr'}
         />
       </label>
     </form>

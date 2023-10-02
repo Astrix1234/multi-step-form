@@ -8,7 +8,7 @@ export const useNavigationHandlers = plan => {
   };
 
   const onGoBack = () => {
-    plan === 'monthly' ? navigate('/step2-monthly') : navigate('/step2-yearly');
+    plan === 'Monthly' ? navigate('/step2-monthly') : navigate('/step2-yearly');
   };
 
   return { onNextStep, onGoBack };

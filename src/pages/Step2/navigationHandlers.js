@@ -3,24 +3,31 @@ import { useNavigate } from 'react-router-dom';
 export const useNavigationHandlers = (
   plan,
   setPlanDetails,
-  setSelectedInput
+  setSelectedInput,
+  selectedInput
 ) => {
   const navigate = useNavigate();
 
   const handleToggleChange = () => {
-    if (plan === 'monthly') {
-      setPlanDetails(prevDetails => ({ ...prevDetails, plan: 'yearly' }));
+    if (plan === 'Monthly') {
+      setPlanDetails(prevDetails => ({ ...prevDetails, plan: 'Yearly' }));
       setSelectedInput('');
       navigate('/step2-yearly');
     } else {
-      setPlanDetails(prevDetails => ({ ...prevDetails, plan: 'monthly' }));
+      setPlanDetails(prevDetails => ({ ...prevDetails, plan: 'Monthly' }));
       setSelectedInput('');
       navigate('/step2-monthly');
     }
   };
 
   const onNextStep = () => {
-    plan === 'monthly' ? navigate('/step3-monthly') : navigate('/step3-yearly');
+    if (!selectedInput) {
+      alert('Please select a plan.');
+    } else {
+      plan === 'Monthly'
+        ? navigate('/step3-monthly')
+        : navigate('/step3-yearly');
+    }
   };
 
   const onGoBack = () => {

@@ -4,18 +4,18 @@ export const handlePlanChoiceChange = (e, plan, setPlanDetails) => {
   let price, period, planName;
   switch (selectedPlan) {
     case 'arcade':
-      price = plan === 'monthly' ? 9 : 90;
-      period = plan === 'monthly' ? 'mo' : 'yr';
+      price = plan === 'Monthly' ? 9 : 90;
+      period = plan === 'Monthly' ? 'mo' : 'yr';
       planName = 'Arcade';
       break;
     case 'advanced':
-      price = plan === 'monthly' ? 12 : 120;
-      period = plan === 'monthly' ? 'mo' : 'yr';
+      price = plan === 'Monthly' ? 12 : 120;
+      period = plan === 'Monthly' ? 'mo' : 'yr';
       planName = 'Advanced';
       break;
     case 'pro':
-      price = plan === 'monthly' ? 15 : 150;
-      period = plan === 'monthly' ? 'mo' : 'yr';
+      price = plan === 'Monthly' ? 15 : 150;
+      period = plan === 'Monthly' ? 'mo' : 'yr';
       planName = 'Pro';
       break;
     default:
