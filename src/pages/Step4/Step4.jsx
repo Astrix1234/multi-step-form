@@ -12,7 +12,6 @@ export default function Step4() {
   const { planDetails, setPlanDetails } = useContext(PlanContext);
   const plan = planDetails.plan;
   const planPrice = planDetails.price;
-  console.log(planPrice);
 
   const { onNextStep, onGoBack } = useNavigationHandlers(plan, setPlanDetails);
 

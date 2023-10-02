@@ -1,17 +1,16 @@
-import React from 'react';
 import InputRadioPlaceholder from 'components/InputRadioPlaceholder/InputRadioPlaceholder';
 import IconArcade from 'components/IconArcade/IconArcade';
 import IconAdvanced from 'components/IconAdvanced/IconAdvanced';
 import IconPro from 'components/IconPro/IconPro';
 import css from './FormStep2.module.css';
 import PropTypes from 'prop-types';
-import { plansConfig } from '../../config/plansConfig';
 
-const FormStep2 = ({ plan, handleChoiceChange }) => {
-  const arcadeConfig = plansConfig.arcade[plan];
-  const advancedConfig = plansConfig.advanced[plan];
-  const proConfig = plansConfig.pro[plan];
-
+const FormStep2 = ({
+  plan,
+  handleChoiceChange,
+  selectedInput,
+  setSelectedInput,
+}) => {
   return (
     <form className={css.form}>
       <label htmlFor="arcade">
@@ -21,15 +20,18 @@ const FormStep2 = ({ plan, handleChoiceChange }) => {
           type="radio"
           name="planChoice"
           value="arcade"
-          defaultChecked
-          onChange={handleChoiceChange}
+          checked={selectedInput === 'arcade'}
+          onChange={e => {
+            handleChoiceChange(e);
+            setSelectedInput(e.target.value);
+          }}
         />
         <InputRadioPlaceholder
           className={css.inputPlaceholder}
-          plan={arcadeConfig.name}
-          price={arcadeConfig.price}
-          period={arcadeConfig.period}
-          comment={arcadeConfig.comment}
+          plan="Arcade"
+          price={plan === 'monthly' ? 9 : 90}
+          period={plan === 'monthly' ? 'mo' : 'yr'}
+          comment={plan === 'monthly' ? '' : '2 months free.'}
         >
           <IconArcade />
         </InputRadioPlaceholder>
@@ -41,14 +43,18 @@ const FormStep2 = ({ plan, handleChoiceChange }) => {
           type="radio"
           name="planChoice"
           value="advanced"
-          onChange={handleChoiceChange}
+          checked={selectedInput === 'advanced'}
+          onChange={e => {
+            handleChoiceChange(e);
+            setSelectedInput(e.target.value);
+          }}
         />
         <InputRadioPlaceholder
           className={css.inputPlaceholder}
-          plan={advancedConfig.name}
-          price={advancedConfig.price}
-          period={advancedConfig.period}
-          comment={advancedConfig.comment}
+          plan="Advanced"
+          price={plan === 'monthly' ? 12 : 120}
+          period={plan === 'monthly' ? 'mo' : 'yr'}
+          comment={plan === 'monthly' ? '' : '2 months free.'}
         >
           <IconAdvanced />
         </InputRadioPlaceholder>
@@ -60,14 +66,18 @@ const FormStep2 = ({ plan, handleChoiceChange }) => {
           type="radio"
           name="planChoice"
           value="pro"
-          onChange={handleChoiceChange}
+          checked={selectedInput === 'pro'}
+          onChange={e => {
+            handleChoiceChange(e);
+            setSelectedInput(e.target.value);
+          }}
         />
         <InputRadioPlaceholder
           className={css.inputPlaceholder}
-          plan={proConfig.name}
-          price={proConfig.price}
-          period={proConfig.period}
-          comment={proConfig.comment}
+          plan="Pro"
+          price={plan === 'monthly' ? 15 : 150}
+          period={plan === 'monthly' ? 'mo' : 'yr'}
+          comment={plan === 'monthly' ? '' : '2 months free.'}
         >
           <IconPro />
         </InputRadioPlaceholder>
@@ -79,6 +89,8 @@ const FormStep2 = ({ plan, handleChoiceChange }) => {
 FormStep2.propTypes = {
   plan: PropTypes.string.isRequired,
   handleChoiceChange: PropTypes.func.isRequired,
+  selectedInput: PropTypes.string.isRequired,
+  setSelectedInput: PropTypes.func.isRequired,
 };
 
 export default FormStep2;

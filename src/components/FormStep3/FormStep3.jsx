@@ -13,7 +13,6 @@ const FormStep3 = ({ plan, handleChoiceChange }) => {
           type="checkbox"
           name="serviceChoice"
           value="online"
-          defaultChecked
           onChange={handleChoiceChange}
         />
         <InputCheckboxPlaceholder
@@ -32,7 +31,6 @@ const FormStep3 = ({ plan, handleChoiceChange }) => {
           type="checkbox"
           name="serviceChoice"
           value="larger"
-          defaultChecked
           onChange={handleChoiceChange}
         />
         <InputCheckboxPlaceholder
