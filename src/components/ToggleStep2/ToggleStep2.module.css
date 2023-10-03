@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 32px;
+    margin-top: 24px;
     background-color: #F8F9FF;
     padding: 14px 0;
     border-radius: 8px;
@@ -31,7 +31,7 @@
     height: 12px;
     background-color: #fff;
     border-radius: 50%;
-    animation-duration: 0.3s;
+    animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
 }
@@ -76,4 +76,10 @@
 
 .activeText {
     color: #022959;
+}
+
+@media (min-width: 1180px) {
+    .toggleContainer {
+        margin-top: 32px;
+    }
 }

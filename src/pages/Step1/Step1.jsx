@@ -7,8 +7,10 @@ import FormStep1 from 'components/FormStep1/FormStep1';
 export default function Step1() {
   return (
     <div className={css.container}>
-      <TitleSteps title="Personal info" />
-      <CommentSteps comment="Please provide your name, email address, and phone number." />
+      <div className={css.textContainer}>
+        <TitleSteps title="Personal info" />
+        <CommentSteps comment="Please provide your name, email address, and phone number." />
+      </div>
       <FormStep1 />
     </div>
   );

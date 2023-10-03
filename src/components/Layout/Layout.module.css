@@ -1,10 +1,22 @@
 .container {
-    max-width: 940px;
-    height: 600px;
+    max-width: 375px;
     margin: 0 auto;
     display: flex;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0px 25px 40px -20px rgba(0, 0, 0, 0.10);
-    margin-top: 100px;
+    flex-direction: column;
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 0;
+}
+
+@media (min-width: 1180px) {
+    .container {
+        max-width: 940px;
+        height: 600px;
+        margin: 0 auto;
+        flex-direction: row;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0px 25px 40px -20px rgba(0, 0, 0, 0.10);
+        margin-top: 100px;
+    }
 }

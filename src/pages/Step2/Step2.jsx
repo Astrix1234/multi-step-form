@@ -40,15 +40,17 @@ export default function Step2() {
 
   return (
     <div className={css.container}>
-      <TitleSteps title="Select your plan" />
-      <CommentSteps comment="You have the option of monthly or yearly billing." />
-      <FormStep2
-        plan={plan}
-        handleChoiceChange={handleChoiceChange}
-        selectedInput={selectedInput}
-        setSelectedInput={setSelectedInput}
-      />
-      <ToggleStep2 plan={plan} handleToggleChange={handleToggleChange} />
+      <div className={css.contentContainer}>
+        <TitleSteps title="Select your plan" />
+        <CommentSteps comment="You have the option of monthly or yearly billing." />
+        <FormStep2
+          plan={plan}
+          handleChoiceChange={handleChoiceChange}
+          selectedInput={selectedInput}
+          setSelectedInput={setSelectedInput}
+        />
+        <ToggleStep2 plan={plan} handleToggleChange={handleToggleChange} />
+      </div>
       <div className={css.buttons}>
         <ButtonGoBack onClick={onGoBack} />
         <ButtonNextStep onClick={onNextStep} type="button" />

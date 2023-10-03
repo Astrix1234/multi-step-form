@@ -1,6 +1,6 @@
 .container {
-    padding: 20px 0 16px 16px;
-    width: 138px;
+    display: flex;
+    width: 100%;
     border: 1px solid #D6D9E6;
     border-radius: 8px;
     transition: border 0.3s ease-in-out;
@@ -16,13 +16,19 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    margin-bottom: 39px;
+    margin-top: 17px;
+    margin-left: 16px;
+}
+
+.textContainer {
+    margin: 14px 0 17px 14px;
 }
 
 .plan {
     font-size: 16px;
     font-weight: 500;
     color: #022959;
+    line-height: 20px;
 }
 
 .price {
@@ -34,6 +40,29 @@
 .comment {
     font-size: 12px;
     color: #022959;
-    margin-top: 6px;
+    margin-top: 3px;
+    line-height: 20px;
+}
 
+@media (min-width: 1180px) {
+    .container {
+        flex-direction: column;
+        padding: 20px 0 16px 16px;
+        width: 138px;
+    }
+
+    .icon {
+        margin-bottom: 39px;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .textContainer {
+        margin: 0;
+    }
+
+    .comment {
+        margin-top: 6px;
+        line-height: normal;
+    }
 }

@@ -1,14 +1,8 @@
-.item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 31px;
-}
-
 .stepNumber {
     font-weight: 700;
     font-size: 14px;
-    width: 32px;
-    height: 32px;
+    width: 33px;
+    height: 33px;
     border-radius: 50%;
     border: 1px solid white;
     color: white;
@@ -17,23 +11,36 @@
     justify-content: center;
 }
 
-
 .description {
-    margin-left: 16px;
-}
-
-.step {
-    font-size: 12px;
-    color: #ABBCFF;
-    margin-bottom: 4px;
-}
-
-.title {
-    font-size: 14px;
-    color: white;
+    display: none;
 }
 
 .activeStep {
     background-color: #BEE2FD;
     color: #022959;
+}
+
+@media (min-width: 1180px) {
+    .item {
+        display: flex;
+        align-items: center;
+    }
+
+
+    .description {
+        display: block;
+        margin-left: 16px;
+    }
+
+    .step {
+        font-size: 12px;
+        color: #ABBCFF;
+        margin-bottom: 4px;
+    }
+
+    .title {
+        font-size: 14px;
+        color: white;
+    }
+
 }

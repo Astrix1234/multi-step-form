@@ -1,4 +1,15 @@
 .appBarList {
-    margin-top: 40px;
-    margin-left: 32px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+@media (min-width: 1180px) {
+    .appBarList {
+        flex-direction: column;
+        margin-top: 40px;
+        margin-left: 32px;
+        gap: 32px;
+    }
 }

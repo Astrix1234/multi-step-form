@@ -13,9 +13,11 @@ const InputRadioPlaceholder = ({
   return (
     <div className={`${css.container} ${className}`}>
       <div className={css.icon}>{children}</div>
-      <p className={css.plan}>{plan}</p>
-      <p className={css.price}>{`$${price}/${period}`}</p>
-      <p className={css.comment}>{comment}</p>
+      <div className={css.textContainer}>
+        <p className={css.plan}>{plan}</p>
+        <p className={css.price}>{`$${price}/${period}`}</p>
+        <p className={css.comment}>{comment}</p>
+      </div>
     </div>
   );
 };

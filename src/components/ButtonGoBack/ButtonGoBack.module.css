@@ -1,7 +1,7 @@
 .btnGoBack {
     border: none;
     background-color: transparent;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     color: #9699AA;
     transition: color 0.3s ease-in-out;
@@ -11,4 +11,11 @@
 .btnGoBack:focus {
     color: #022959;
     cursor: pointer;
+}
+
+@media (min-width: 1180px) {
+    .btnGoBack {
+        font-size: 16px;
+    }
+
 }

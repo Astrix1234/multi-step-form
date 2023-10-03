@@ -1,11 +1,11 @@
 .btnConfirm {
     background-color: #483EFF;
     border: none;
-    width: 123px;
-    height: 48px;
-    border-radius: 8px;
+    width: 97px;
+    height: 40px;
+    border-radius: 4px;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
     color: white;
     transition: background-color 0.3s ease-in-out;
     margin-left: auto;
@@ -15,4 +15,13 @@
 .btnConfirm:focus {
     background-color: #928CFF;
     cursor: pointer;
+}
+
+@media (min-width: 1180px) {
+    .btnConfirm {
+        width: 123px;
+        height: 48px;
+        border-radius: 8px;
+        font-size: 16px;
+    }
 }
