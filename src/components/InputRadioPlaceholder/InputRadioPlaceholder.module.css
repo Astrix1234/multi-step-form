@@ -21,20 +21,20 @@
 }
 
 .textContainer {
-    margin: 14px 0 17px 14px;
+    margin: 14px 0 18px 14px;
 }
 
 .plan {
     font-size: 16px;
     font-weight: 500;
     color: #022959;
-    line-height: 20px;
 }
 
 .price {
     margin-top: 7px;
     font-size: 14px;
     color: #9699AA;
+    line-height: 20px;
 }
 
 .comment {

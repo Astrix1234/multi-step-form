@@ -17,5 +17,13 @@
 .form {
     display: flex;
     flex-direction: column;
-    margin-top: 35px;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+@media (min-width: 1180px) {
+    .form {
+        gap: 16px;
+        margin-top: 35px;
+    }
 }

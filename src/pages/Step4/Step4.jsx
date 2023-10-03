@@ -20,23 +20,25 @@ export default function Step4() {
 
   return (
     <div className={css.container}>
-      <TitleSteps title="Finishing up" />
-      <CommentSteps comment="Double-check everything looks OK before confirming." />
-      <SummaryStep4
-        planName={step4Data.planName}
-        periodName={step4Data.periodName}
-        planPrice={step4Data.planPrice}
-        online={step4Data.online}
-        larger={step4Data.larger}
-        custom={step4Data.custom}
-        period={step4Data.period}
-        priceOnline={step4Data.priceOnline}
-        priceLarger={step4Data.priceLarger}
-        priceCustom={step4Data.priceCustom}
-        perPeriod={step4Data.perPeriod}
-        totalPrice={step4Data.totalPrice}
-        path={step4Data.path}
-      />
+      <div className={css.contentContainer}>
+        <TitleSteps title="Finishing up" />
+        <CommentSteps comment="Double-check everything looks OK before confirming." />
+        <SummaryStep4
+          planName={step4Data.planName}
+          periodName={step4Data.periodName}
+          planPrice={step4Data.planPrice}
+          online={step4Data.online}
+          larger={step4Data.larger}
+          custom={step4Data.custom}
+          period={step4Data.period}
+          priceOnline={step4Data.priceOnline}
+          priceLarger={step4Data.priceLarger}
+          priceCustom={step4Data.priceCustom}
+          perPeriod={step4Data.perPeriod}
+          totalPrice={step4Data.totalPrice}
+          path={step4Data.path}
+        />
+      </div>
       <div className={css.buttons}>
         <ButtonGoBack onClick={onGoBack} />
         <ButtonConfirm onClick={onNextStep} />

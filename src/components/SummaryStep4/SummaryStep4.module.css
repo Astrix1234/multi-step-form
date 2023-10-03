@@ -1,14 +1,13 @@
 .mainContainer {
-    width: 450px;
+    width: 100%;
 }
 
 .container {
-
     background-color: #F8F9FF;
     border-radius: 8px;
-    padding: 16px 24px 8px 24px;
-    margin-top: 35px;
-    margin-bottom: 26px;
+    padding: 16px;
+    margin-top: 22px;
+    margin-bottom: 24px;
 }
 
 .plan {
@@ -18,16 +17,17 @@
 }
 
 .planName {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     color: #022959;
-    margin-bottom: 7px;
+    margin-bottom: 3px;
 }
 
 .link {
     font-size: 14px;
     line-height: 20px;
     color: #9699AA;
+    transition: color 0.3s ease-in-out;
 }
 
 .link:hover,
@@ -35,9 +35,15 @@
     color: #483EFF;
 }
 
+.planPrice {
+    font-size: 14px;
+    color: #022959;
+    font-weight: 700;
+    line-height: 20px;
+}
+
 .line {
-    margin-top: 24px;
-    margin-bottom: 16px;
+    margin-top: 12px;
     color: #F8F9FF;
 }
 
@@ -45,7 +51,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 16px;
+    margin-top: 12px;
 }
 
 .serviceName {
@@ -64,18 +70,57 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 24px;
+    margin: 0 16px;
 }
 
 .totalText {
     font-size: 14px;
     line-height: 20px;
     color: #9699AA;
-
 }
 
 .totalPrice {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     color: #483EFF;
+    line-height: 20px;
+}
+
+@media (min-width: 1180px) {
+    .mainContainer {
+        max-width: 450px;
+    }
+
+    .container {
+        padding: 16px 24px 8px 24px;
+        margin-top: 35px;
+        margin-bottom: 26px;
+    }
+
+    .planName {
+        font-size: 16px;
+        margin-bottom: 7px;
+    }
+
+    .planPrice {
+        font-size: 16px;
+    }
+
+    .line {
+        margin-top: 24px;
+        margin-bottom: 16px;
+    }
+
+    .service {
+        margin-bottom: 16px;
+        margin-top: 0;
+    }
+
+    .total {
+        margin: 0 24px;
+    }
+
+    .totalPrice {
+        font-size: 20px;
+    }
 }
