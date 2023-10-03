@@ -16,6 +16,8 @@ export const App = () => {
     price: 0,
     period: 'mo',
     services: {},
+    selectedInput: '',
+    selectedCheckbox: [],
   });
   return (
     <PlanContext.Provider value={{ planDetails, setPlanDetails }}>

@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import css from './Step2.module.css';
 import TitleSteps from 'components/TitleSteps/TitleSteps';
 import CommentSteps from 'components/CommentSteps/CommentSteps';
@@ -13,24 +13,12 @@ import ToggleStep2 from 'components/ToggleStep2/ToggleStep2';
 export default function Step2() {
   const { planDetails, setPlanDetails } = useContext(PlanContext);
   const plan = planDetails.plan;
-
-  const path = plan === 'Monthly' ? '/step2-monthly' : '/step2-yearly';
-
-  useEffect(() => {
-    setPlanDetails(prevDetails => ({
-      ...prevDetails,
-      services: {},
-    }));
-  }, [path, setPlanDetails]);
-
-  const [selectedInput, setSelectedInput] = useState(
-    planDetails.planName.toLowerCase()
-  );
+  const selectedInput = planDetails.selectedInput;
 
   const { onNextStep, onGoBack, handleToggleChange } = useNavigationHandlers(
     plan,
     setPlanDetails,
-    setSelectedInput,
+    planDetails,
     selectedInput
   );
 
@@ -47,7 +35,6 @@ export default function Step2() {
           plan={plan}
           handleChoiceChange={handleChoiceChange}
           selectedInput={selectedInput}
-          setSelectedInput={setSelectedInput}
         />
         <ToggleStep2 plan={plan} handleToggleChange={handleToggleChange} />
       </div>

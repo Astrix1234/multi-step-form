@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import css from './FormStep3.module.css';
 import InputCheckboxPlaceholder from 'components/InputCheckboxPlaceholder/InputCheckboxPlaceholder';
 
-const FormStep3 = ({ plan, handleChoiceChange }) => {
+const FormStep3 = ({ plan, handleChoiceChange, selectedCheckbox }) => {
   return (
     <form className={css.form}>
       <label htmlFor="online">
@@ -14,6 +14,7 @@ const FormStep3 = ({ plan, handleChoiceChange }) => {
           name="serviceChoice"
           value="online"
           onChange={handleChoiceChange}
+          checked={selectedCheckbox.includes('online')}
         />
         <InputCheckboxPlaceholder
           className={css.inputPlaceholder}
@@ -32,6 +33,7 @@ const FormStep3 = ({ plan, handleChoiceChange }) => {
           name="serviceChoice"
           value="larger"
           onChange={handleChoiceChange}
+          checked={selectedCheckbox.includes('larger')}
         />
         <InputCheckboxPlaceholder
           className={css.inputPlaceholder}
@@ -50,6 +52,7 @@ const FormStep3 = ({ plan, handleChoiceChange }) => {
           name="serviceChoice"
           value="custom"
           onChange={handleChoiceChange}
+          checked={selectedCheckbox.includes('custom')}
         />
         <InputCheckboxPlaceholder
           className={css.inputPlaceholder}
@@ -67,6 +70,7 @@ const FormStep3 = ({ plan, handleChoiceChange }) => {
 FormStep3.propTypes = {
   plan: PropTypes.string.isRequired,
   handleChoiceChange: PropTypes.func.isRequired,
+  selectedCheckbox: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default FormStep3;

@@ -5,12 +5,7 @@ import IconPro from 'components/IconPro/IconPro';
 import css from './FormStep2.module.css';
 import PropTypes from 'prop-types';
 
-const FormStep2 = ({
-  plan,
-  handleChoiceChange,
-  selectedInput,
-  setSelectedInput,
-}) => {
+const FormStep2 = ({ plan, handleChoiceChange, selectedInput }) => {
   return (
     <form className={css.form}>
       <label htmlFor="arcade">
@@ -21,10 +16,7 @@ const FormStep2 = ({
           name="planChoice"
           value="arcade"
           checked={selectedInput === 'arcade'}
-          onChange={e => {
-            handleChoiceChange(e);
-            setSelectedInput(e.target.value);
-          }}
+          onChange={handleChoiceChange}
         />
         <InputRadioPlaceholder
           className={css.inputPlaceholder}
@@ -44,10 +36,7 @@ const FormStep2 = ({
           name="planChoice"
           value="advanced"
           checked={selectedInput === 'advanced'}
-          onChange={e => {
-            handleChoiceChange(e);
-            setSelectedInput(e.target.value);
-          }}
+          onChange={handleChoiceChange}
         />
         <InputRadioPlaceholder
           className={css.inputPlaceholder}
@@ -67,10 +56,7 @@ const FormStep2 = ({
           name="planChoice"
           value="pro"
           checked={selectedInput === 'pro'}
-          onChange={e => {
-            handleChoiceChange(e);
-            setSelectedInput(e.target.value);
-          }}
+          onChange={handleChoiceChange}
         />
         <InputRadioPlaceholder
           className={css.inputPlaceholder}
@@ -90,7 +76,6 @@ FormStep2.propTypes = {
   plan: PropTypes.string.isRequired,
   handleChoiceChange: PropTypes.func.isRequired,
   selectedInput: PropTypes.string.isRequired,
-  setSelectedInput: PropTypes.func.isRequired,
 };
 
 export default FormStep2;

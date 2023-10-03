@@ -21,16 +21,23 @@ export const handleChoiceChange = (e, plan, setPlanDetails) => {
 
   setPlanDetails(prevDetails => {
     let updatedServices = { ...prevDetails.services };
+    let updatedCheckboxes = [...prevDetails.selectedCheckbox];
 
     if (checked) {
       updatedServices[value] = serviceDetails[value];
+      updatedCheckboxes.push(value);
     } else {
       delete updatedServices[value];
+      const index = updatedCheckboxes.indexOf(value);
+      if (index > -1) {
+        updatedCheckboxes.splice(index, 1);
+      }
     }
 
     return {
       ...prevDetails,
       services: updatedServices,
+      selectedCheckbox: updatedCheckboxes,
     };
   });
 };

@@ -24,5 +24,11 @@ export const handlePlanChoiceChange = (e, plan, setPlanDetails) => {
       planName = 'Arcade';
   }
 
-  setPlanDetails(prevDetails => ({ ...prevDetails, price, period, planName }));
+  setPlanDetails(prevDetails => ({
+    ...prevDetails,
+    price,
+    period,
+    planName,
+    selectedInput: selectedPlan,
+  }));
 };
