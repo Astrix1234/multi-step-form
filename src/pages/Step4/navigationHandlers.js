@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 export const useNavigationHandlers = plan => {
   const navigate = useNavigate();
 
-  const onNextStep = () => {
+  const handleFormSubmit = e => {
+    e.preventDefault();
     navigate('/step5');
   };
 
@@ -11,5 +12,5 @@ export const useNavigationHandlers = plan => {
     plan === 'Monthly' ? navigate('/step3-monthly') : navigate('/step3-yearly');
   };
 
-  return { onNextStep, onGoBack };
+  return { handleFormSubmit, onGoBack };
 };

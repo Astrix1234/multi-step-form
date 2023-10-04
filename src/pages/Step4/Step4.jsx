@@ -16,10 +16,10 @@ export default function Step4() {
 
   // console.log(planDetails);
 
-  const { onNextStep, onGoBack } = useNavigationHandlers(step4Data.plan);
+  const { handleFormSubmit, onGoBack } = useNavigationHandlers(step4Data.plan);
 
   return (
-    <div className={css.container}>
+    <form onSubmit={handleFormSubmit} className={css.container}>
       <div className={css.contentContainer}>
         <TitleSteps title="Finishing up" />
         <CommentSteps comment="Double-check everything looks OK before confirming." />
@@ -41,8 +41,8 @@ export default function Step4() {
       </div>
       <div className={css.buttons}>
         <ButtonGoBack onClick={onGoBack} />
-        <ButtonConfirm onClick={onNextStep} />
+        <ButtonConfirm />
       </div>
-    </div>
+    </form>
   );
 }
