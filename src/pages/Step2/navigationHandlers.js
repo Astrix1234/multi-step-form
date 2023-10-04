@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { PLANS, SERVICES } from '../../plansConfig/plansConfig';
 
 export const useNavigationHandlers = (
   plan,
@@ -10,47 +11,33 @@ export const useNavigationHandlers = (
 
   const handleToggleChange = () => {
     let newPlan = plan === 'Monthly' ? 'Yearly' : 'Monthly';
-    let updatedServices = { ...planDetails.services };
 
-    for (let serviceKey in updatedServices) {
-      switch (serviceKey) {
-        case 'online':
-          updatedServices[serviceKey].price = newPlan === 'Monthly' ? 1 : 10;
-          break;
-        case 'larger':
-          updatedServices[serviceKey].price = newPlan === 'Monthly' ? 2 : 20;
-          break;
-        case 'custom':
-          updatedServices[serviceKey].price = newPlan === 'Monthly' ? 2 : 20;
-          break;
-        default:
-          break;
-      }
-      updatedServices[serviceKey].period = newPlan === 'Monthly' ? 'mo' : 'yr';
-    }
+    const updatedServices = Object.keys(planDetails.services).reduce(
+      (acc, serviceKey) => {
+        acc[serviceKey] = {
+          ...SERVICES[serviceKey],
+          price:
+            newPlan === 'Monthly'
+              ? SERVICES[serviceKey].monthlyPrice
+              : SERVICES[serviceKey].yearlyPrice,
+          period:
+            newPlan === 'Monthly'
+              ? SERVICES[serviceKey].monthlyPeriod
+              : SERVICES[serviceKey].yearlyPeriod,
+        };
+        return acc;
+      },
+      {}
+    );
 
-    let newPrice, newPeriod, newPlanName;
-    switch (selectedInput) {
-      case 'arcade':
-        newPrice = newPlan === 'Monthly' ? 9 : 90;
-        newPeriod = newPlan === 'Monthly' ? 'mo' : 'yr';
-        newPlanName = 'Arcade';
-        break;
-      case 'advanced':
-        newPrice = newPlan === 'Monthly' ? 12 : 120;
-        newPeriod = newPlan === 'Monthly' ? 'mo' : 'yr';
-        newPlanName = 'Advanced';
-        break;
-      case 'pro':
-        newPrice = newPlan === 'Monthly' ? 15 : 150;
-        newPeriod = newPlan === 'Monthly' ? 'mo' : 'yr';
-        newPlanName = 'Pro';
-        break;
-      default:
-        newPrice = 0;
-        newPeriod = 'mo';
-        newPlanName = 'Arcade';
-    }
+    const planConfig = PLANS[selectedInput.toUpperCase()];
+    const newPrice =
+      newPlan === 'Monthly' ? planConfig.monthlyPrice : planConfig.yearlyPrice;
+    const newPeriod =
+      newPlan === 'Monthly'
+        ? planConfig.monthlyPeriod
+        : planConfig.yearlyPeriod;
+    const newPlanName = planConfig.name;
 
     setPlanDetails(prevDetails => ({
       ...prevDetails,

@@ -1,22 +1,18 @@
+import { SERVICES } from '../../plansConfig/plansConfig';
+
 export const handleChoiceChange = (e, plan, setPlanDetails) => {
   const { value, checked } = e.target;
 
   const serviceDetails = {
-    online: {
-      name: 'Online service',
-      price: plan === 'Monthly' ? 1 : 10,
-      period: plan === 'Monthly' ? 'mo' : 'yr',
-    },
-    larger: {
-      name: 'Larger storage',
-      price: plan === 'Monthly' ? 2 : 20,
-      period: plan === 'Monthly' ? 'mo' : 'yr',
-    },
-    custom: {
-      name: 'Customizable profile',
-      price: plan === 'Monthly' ? 2 : 20,
-      period: plan === 'Monthly' ? 'mo' : 'yr',
-    },
+    ...SERVICES[value],
+    price:
+      plan === 'Monthly'
+        ? SERVICES[value].monthlyPrice
+        : SERVICES[value].yearlyPrice,
+    period:
+      plan === 'Monthly'
+        ? SERVICES[value].monthlyPeriod
+        : SERVICES[value].yearlyPeriod,
   };
 
   setPlanDetails(prevDetails => {
@@ -24,7 +20,7 @@ export const handleChoiceChange = (e, plan, setPlanDetails) => {
     let updatedCheckboxes = [...prevDetails.selectedCheckbox];
 
     if (checked) {
-      updatedServices[value] = serviceDetails[value];
+      updatedServices[value] = serviceDetails;
       updatedCheckboxes.push(value);
     } else {
       delete updatedServices[value];

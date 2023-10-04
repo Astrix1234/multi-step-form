@@ -14,7 +14,7 @@ export default function Step4() {
 
   const step4Data = getStep4Data(planDetails);
 
-  // console.log(planDetails);
+  console.log(planDetails);
 
   const { handleFormSubmit, onGoBack } = useNavigationHandlers(step4Data.plan);
 

@@ -1,28 +1,14 @@
+import { PLANS } from '../../plansConfig/plansConfig';
+
 export const handlePlanChoiceChange = (e, plan, setPlanDetails) => {
   const selectedPlan = e.target.value;
+  const planConfig = PLANS[selectedPlan.toUpperCase()];
 
-  let price, period, planName;
-  switch (selectedPlan) {
-    case 'arcade':
-      price = plan === 'Monthly' ? 9 : 90;
-      period = plan === 'Monthly' ? 'mo' : 'yr';
-      planName = 'Arcade';
-      break;
-    case 'advanced':
-      price = plan === 'Monthly' ? 12 : 120;
-      period = plan === 'Monthly' ? 'mo' : 'yr';
-      planName = 'Advanced';
-      break;
-    case 'pro':
-      price = plan === 'Monthly' ? 15 : 150;
-      period = plan === 'Monthly' ? 'mo' : 'yr';
-      planName = 'Pro';
-      break;
-    default:
-      price = 0;
-      period = 'mo';
-      planName = 'Arcade';
-  }
+  const price =
+    plan === 'Monthly' ? planConfig.monthlyPrice : planConfig.yearlyPrice;
+  const period =
+    plan === 'Monthly' ? planConfig.monthlyPeriod : planConfig.yearlyPeriod;
+  const planName = planConfig.name;
 
   setPlanDetails(prevDetails => ({
     ...prevDetails,

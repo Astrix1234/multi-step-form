@@ -2,67 +2,40 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import css from './FormStep3.module.css';
 import InputCheckboxPlaceholder from 'components/InputCheckboxPlaceholder/InputCheckboxPlaceholder';
+import { SERVICES } from '../../plansConfig/plansConfig';
 
 const FormStep3 = ({ plan, handleChoiceChange, selectedCheckbox }) => {
   return (
     <form className={css.form}>
-      <label htmlFor="online">
-        <input
-          id="online"
-          className={css.visuallyHidden}
-          type="checkbox"
-          name="serviceChoice"
-          value="online"
-          onChange={handleChoiceChange}
-          checked={selectedCheckbox.includes('online')}
-        />
-        <InputCheckboxPlaceholder
-          className={css.inputPlaceholder}
-          classNameBox={css.checkboxPlaceholder}
-          title="Online service"
-          comment="Access to multiplayer games"
-          price={plan === 'Monthly' ? 1 : 10}
-          period={plan === 'Monthly' ? 'mo' : 'yr'}
-        />
-      </label>
-      <label htmlFor="larger">
-        <input
-          id="larger"
-          className={css.visuallyHidden}
-          type="checkbox"
-          name="serviceChoice"
-          value="larger"
-          onChange={handleChoiceChange}
-          checked={selectedCheckbox.includes('larger')}
-        />
-        <InputCheckboxPlaceholder
-          className={css.inputPlaceholder}
-          classNameBox={css.checkboxPlaceholder}
-          title="Larger storage"
-          comment="Extra 1TB of cloud save"
-          price={plan === 'Monthly' ? 2 : 20}
-          period={plan === 'Monthly' ? 'mo' : 'yr'}
-        />
-      </label>
-      <label htmlFor="custom">
-        <input
-          id="custom"
-          className={css.visuallyHidden}
-          type="checkbox"
-          name="serviceChoice"
-          value="custom"
-          onChange={handleChoiceChange}
-          checked={selectedCheckbox.includes('custom')}
-        />
-        <InputCheckboxPlaceholder
-          className={css.inputPlaceholder}
-          classNameBox={css.checkboxPlaceholder}
-          title="Customizable profile"
-          comment="Custom theme on your profile"
-          price={plan === 'Monthly' ? 2 : 20}
-          period={plan === 'Monthly' ? 'mo' : 'yr'}
-        />
-      </label>
+      {Object.keys(SERVICES).map(serviceKey => (
+        <label key={serviceKey} htmlFor={serviceKey}>
+          <input
+            id={serviceKey}
+            className={css.visuallyHidden}
+            type="checkbox"
+            name="serviceChoice"
+            value={serviceKey}
+            onChange={handleChoiceChange}
+            checked={selectedCheckbox.includes(serviceKey)}
+          />
+          <InputCheckboxPlaceholder
+            className={css.inputPlaceholder}
+            classNameBox={css.checkboxPlaceholder}
+            title={SERVICES[serviceKey].name}
+            comment={SERVICES[serviceKey].comment}
+            price={
+              plan === 'Monthly'
+                ? SERVICES[serviceKey].monthlyPrice
+                : SERVICES[serviceKey].yearlyPrice
+            }
+            period={
+              plan === 'Monthly'
+                ? SERVICES[serviceKey].monthlyPeriod
+                : SERVICES[serviceKey].yearlyPeriod
+            }
+          />
+        </label>
+      ))}
     </form>
   );
 };
