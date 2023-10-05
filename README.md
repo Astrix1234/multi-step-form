@@ -8,7 +8,7 @@
 
 ## Developed with
 
-- React
+- React, CSS-modules
 - The design of the project was based on BrowserRouter and useContext
 
 ## The challenge
