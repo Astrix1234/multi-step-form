@@ -8,7 +8,8 @@
 
 ## Developed with
 
-- React The design of the project was based on BrowserRouter and useContext
+- React
+- The design of the project was based on BrowserRouter and useContext
 
 ## The challenge
 
