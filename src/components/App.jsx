@@ -1,4 +1,4 @@
-import React, { useState, lazy } from 'react';
+import React, { useState, lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
 import { PlanContext } from './PlanContext/PlanContext';
@@ -10,15 +10,25 @@ const Step4 = lazy(() => import('../pages/Step4/Step4'));
 const Step5 = lazy(() => import('../pages/Step5/Step5'));
 
 export const App = () => {
-  const [planDetails, setPlanDetails] = useState({
-    plan: 'Monthly',
-    planName: '',
-    price: 0,
-    period: 'mo',
-    services: {},
-    selectedInput: '',
-    selectedCheckbox: [],
-  });
+  const savedPlanDetails = sessionStorage.getItem('planDetails');
+  const initialPlanDetails = savedPlanDetails
+    ? JSON.parse(savedPlanDetails)
+    : {
+        plan: 'Monthly',
+        planName: '',
+        price: 0,
+        period: 'mo',
+        services: {},
+        selectedInput: '',
+        selectedCheckbox: [],
+      };
+
+  const [planDetails, setPlanDetails] = useState(initialPlanDetails);
+
+  useEffect(() => {
+    sessionStorage.setItem('planDetails', JSON.stringify(planDetails));
+  }, [planDetails]);
+
   return (
     <PlanContext.Provider value={{ planDetails, setPlanDetails }}>
       <Routes>
