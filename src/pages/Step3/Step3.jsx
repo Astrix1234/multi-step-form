@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import css from './Step3.module.css';
 import TitleSteps from 'components/TitleSteps/TitleSteps';
 import CommentSteps from 'components/CommentSteps/CommentSteps';
@@ -8,10 +8,29 @@ import { PlanContext } from 'components/PlanContext/PlanContext';
 import FormStep3 from 'components/FormStep3/FormStep3';
 import { useNavigationHandlers } from './navigationHandlers';
 import { handleChoiceChange } from './handleChoiceChange';
+import { useNavigate } from 'react-router-dom';
 
 export default function Step3() {
+  const navigate = useNavigate();
   const { planDetails, setPlanDetails } = useContext(PlanContext);
   const plan = planDetails.plan;
+
+  useEffect(() => {
+    if (
+      !planDetails.planName ||
+      !planDetails.price ||
+      !planDetails.selectedInput ||
+      !planDetails.step1Completed
+    ) {
+      navigate('/step1');
+    }
+  }, [
+    planDetails.planName,
+    planDetails.price,
+    planDetails.selectedInput,
+    planDetails.step1Completed,
+    navigate,
+  ]);
 
   const { onNextStep, onGoBack } = useNavigationHandlers(plan);
 

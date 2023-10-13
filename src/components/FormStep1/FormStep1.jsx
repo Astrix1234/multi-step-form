@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import css from './FormStep1.module.css';
 import { validationSchema } from './validationSchema';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import ButtonNextStep from 'components/ButtonNextStep/ButtonNextStep';
+import { PlanContext } from 'components/PlanContext/PlanContext';
 
 const FormStep1 = () => {
   const navigate = useNavigate();
+  const { setPlanDetails } = useContext(PlanContext);
+
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -15,6 +18,11 @@ const FormStep1 = () => {
     },
     validationSchema: validationSchema,
     onSubmit: () => {
+      setPlanDetails(prevState => ({
+        ...prevState,
+        step1Completed: true,
+      }));
+
       navigate('/step2-monthly');
     },
   });

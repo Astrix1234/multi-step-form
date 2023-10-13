@@ -21,6 +21,7 @@ export const App = () => {
         services: {},
         selectedInput: '',
         selectedCheckbox: [],
+        step1Completed: false,
       };
 
   const [planDetails, setPlanDetails] = useState(initialPlanDetails);

@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import css from './Step2.module.css';
 import TitleSteps from 'components/TitleSteps/TitleSteps';
 import CommentSteps from 'components/CommentSteps/CommentSteps';
@@ -11,9 +12,16 @@ import FormStep2 from 'components/FormStep2/FormStep2';
 import ToggleStep2 from 'components/ToggleStep2/ToggleStep2';
 
 export default function Step2() {
+  const navigate = useNavigate();
   const { planDetails, setPlanDetails } = useContext(PlanContext);
   const plan = planDetails.plan;
   const selectedInput = planDetails.selectedInput;
+
+  useEffect(() => {
+    if (!planDetails.step1Completed) {
+      navigate('/step1');
+    }
+  }, [planDetails.step1Completed, navigate]);
 
   const { onNextStep, onGoBack, handleToggleChange } = useNavigationHandlers(
     plan,
